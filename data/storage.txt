@@ -1,4 +1,4 @@
-T | 0 | go climb
+
 T | 1 | go wrestle
 E | 0 | go swim | pool
 E | 0 | go swim | pool
