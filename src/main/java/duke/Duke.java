@@ -60,7 +60,6 @@ public class Duke extends Application {
         scrollPane = new ScrollPane();
         dialogContainer = new VBox();
         scrollPane.setContent(dialogContainer);
-
         userInput = new TextField();
         sendButton = new Button("Send");
 
@@ -89,14 +88,11 @@ public class Duke extends Application {
         dialogContainer.setPrefHeight(Region.USE_COMPUTED_SIZE);
 
         userInput.setPrefWidth(325.0);
-
         sendButton.setPrefWidth(55.0);
 
         AnchorPane.setTopAnchor(scrollPane, 1.0);
-
         AnchorPane.setBottomAnchor(sendButton, 1.0);
         AnchorPane.setRightAnchor(sendButton, 1.0);
-
         AnchorPane.setLeftAnchor(userInput , 1.0);
         AnchorPane.setBottomAnchor(userInput, 1.0);
 
@@ -171,7 +167,6 @@ public class Duke extends Application {
     public static void main(String[] args) {
         Duke duke = new Duke();
         duke.run();
-
     }
 
     /**
@@ -183,6 +178,7 @@ public class Duke extends Application {
 
         while (sc.hasNext() && !isExit) {
             String input = sc.nextLine();
+            assert input != "" : "please input something";
             Command c = Parser.parse(input);
             c.execute(list, ui, storage);
             isExit = c.isExit;

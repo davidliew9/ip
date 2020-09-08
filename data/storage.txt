@@ -1,4 +1,4 @@
 T | 0 | sleep well
 T | 0 | sleep good
-T | 0 | go climb
+T | 1 | go climb
 T | 1 | go wrestle
