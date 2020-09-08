@@ -23,7 +23,10 @@ public class Parser {
      */
     public static Command parse(String input) {
         String checker;
+
+        assert input.length() > 4 : "please enter a valid input";
         if (input.length() > MINIMUM_LENGTH) {
+
             checker = input.substring(0, 4);
         } else {
             checker = "nothing";
