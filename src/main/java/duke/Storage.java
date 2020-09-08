@@ -19,6 +19,10 @@ public class Storage {
 
     public static final String SAVED_FILE = "data/storage.txt";
     public static final String SAVED_FOLDER = "data";
+    public static final String TODO_INDICATOR = "T";
+    public static final String EVENT_INDICATOR = "E";
+    public static final String DEADLINE_INDICATOR = "D";
+    public static final String COMPLETE_INDICATOR = "1";
     private Task task;
 
     public Storage() {}
@@ -38,14 +42,14 @@ public class Storage {
         for (String task : list) {
             Task current = null;
             String[] split = task.split(" \\| ");
-            if (split[0].equals("T")) {
+            if (split[0].equals(TODO_INDICATOR)) {
                 current = new Todo(split[2]);
-            } else if (split[0].equals("E")) {
+            } else if (split[0].equals(EVENT_INDICATOR)) {
                 current = new Event(split[2], split[3]);
-            } else if (split[0].equals("D")) {
+            } else if (split[0].equals(DEADLINE_INDICATOR)) {
                 current = new Deadline(split[2], split[3]);
             }
-            if (split[1].equals("1")) {
+            if (split[1].equals(COMPLETE_INDICATOR)) {
                 current.markAsDone();
             }
             todoList.add(current);

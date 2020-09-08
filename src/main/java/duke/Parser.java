@@ -14,6 +14,8 @@ import duke.command.ListCommand;
  */
 public class Parser {
 
+    private static int MINIMUM_LENGTH = 5;
+
     /**
      * The main method to this class to handle inputs and give commands activated.
      * @param input the user input.
@@ -21,7 +23,7 @@ public class Parser {
      */
     public static Command parse(String input) {
         String checker;
-        if (input.length() > 5) {
+        if (input.length() > MINIMUM_LENGTH) {
             checker = input.substring(0, 4);
         } else {
             checker = "nothing";
